@@ -179,7 +179,7 @@ const Home = () => {
         <Header />
         <button
             onClick={() => setIsAddTodoFormOpen(true)}
-            className="hover:bg-blue-700 fixed right-4 bottom-4 sm:right-8 sm:bottom-8 bg-blue-500 text-white p-5 rounded-full shadow-lg"
+            className="hover:bg-blue-700 fixed right-4 bottom-4 sm:right-8 sm:bottom-8 bg-blue-500 text-white p-5 rounded-full shadow-lg z-10"
         >
           +
         </button>
@@ -208,7 +208,7 @@ const Home = () => {
       )}
       {snackbarMessage && (
         <div
-          className='fixed bottom-4 left-4 right-4 md:left-auto md:right-4 bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300'
+          className='fixed bottom-4 left-4 right-4 md:left-auto md:right-4 bg-green-500 text-white py-2 px-4 rounded shadow-md transition-opacity duration-300 z-10'
           style={{ opacity: snackbarMessage ? "1" : "0" }}
         >
           {snackbarMessage}
