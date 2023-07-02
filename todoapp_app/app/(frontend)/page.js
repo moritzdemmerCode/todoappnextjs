@@ -175,14 +175,14 @@ const Home = () => {
   };
 
   return (
-    <div className='bg-gray-100 min-h-screen'>
-      <Header />
-      <button
-        onClick={() => setIsAddTodoFormOpen(true)}
-        className='hover:bg-blue-700 fixed right-8 bottom-8 bg-blue-500 text-white p-5 rounded-full shadow-lg'
-      >
-        +
-      </button>
+      <div className="bg-gray-100 min-h-screen">
+        <Header />
+        <button
+            onClick={() => setIsAddTodoFormOpen(true)}
+            className="hover:bg-blue-700 fixed right-4 bottom-4 sm:right-8 sm:bottom-8 bg-blue-500 text-white p-5 rounded-full shadow-lg"
+        >
+          +
+        </button>
       {isAddTodoFormOpen && (
         <div className='fixed inset-0 z-50 flex items-center justify-center'>
           <div className='absolute inset-0 bg-black bg-opacity-50'></div>
@@ -214,24 +214,24 @@ const Home = () => {
           {snackbarMessage}
         </div>
       )}
-      <div className='container mx-auto p-4 flex justify-center'>
-        <DragDropContext onDragEnd={handleOnDragEnd}>
-          <div className='flex space-x-4'>
-            {Object.keys(columns).map((columnId) => (
-              <TodoList
-                key={columnId}
-                todos={columns[columnId].map((todoId) =>
-                  todos.find((todo) => todo.id === todoId)
-                )}
-                status={columnId}
-                removeTodo={handleRemoveTodo}
-                onEditTodo={handleBeginEditingTodo}
-                onPriorityChange={handlePriorityChange}
-              />
-            ))}
-          </div>
-        </DragDropContext>
-      </div>
+        <div className="container mx-auto px-4 py-4">
+          <DragDropContext onDragEnd={handleOnDragEnd}>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+              {Object.keys(columns).map((columnId) => (
+                  <TodoList
+                      key={columnId}
+                      todos={columns[columnId].map((todoId) =>
+                          todos.find((todo) => todo.id === todoId)
+                      )}
+                      status={columnId}
+                      removeTodo={handleRemoveTodo}
+                      onEditTodo={handleBeginEditingTodo}
+                      onPriorityChange={handlePriorityChange}
+                  />
+              ))}
+            </div>
+          </DragDropContext>
+        </div>
     </div>
   );
 };

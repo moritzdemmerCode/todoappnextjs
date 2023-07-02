@@ -19,7 +19,7 @@ const AddTodoForm = ({ onAddTodo, onClose}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white rounded p-4 shadow-xl">
+        <form onSubmit={handleSubmit} className="bg-white rounded p-4 shadow-xl w-full sm:w-auto">
             <h2 className="text-gray-700 font-bold text-2xl mb-4">Add New Todo</h2>
             <button
                 onClick={onClose}
@@ -52,7 +52,7 @@ const AddTodoForm = ({ onAddTodo, onClose}) => {
                     required
                 ></textarea>
             </div>
-            <div className="flex justify-center"> {/* Added justify-center here */}
+            <div className="flex justify-center">
                 <div className="flex justify-center">
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

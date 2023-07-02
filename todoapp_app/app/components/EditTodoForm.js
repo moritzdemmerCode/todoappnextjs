@@ -23,7 +23,7 @@ const EditTodoForm = ({ todo, onEditTodo, onClose }) => {
 
     return (
 
-        <form onSubmit={handleSubmit} className="bg-white rounded p-4 shadow-xl">
+        <form onSubmit={handleSubmit} className="bg-white rounded p-4 shadow-xl w-full sm:w-auto">
             <h2 className="text-gray-700 font-bold text-2xl mb-4">Edit Todo</h2>
             <button
                 onClick={onClose}
